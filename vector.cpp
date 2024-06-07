@@ -1,13 +1,15 @@
 #include <iostream>
 #include "vector.h"
 using namespace std;
+double Vector::v_x;
+double Vector::v_y;
 
 Vector::Vector() {
     v_x = 0;
     v_y = 0;
 }
 
-Vector::Vector( double x, double y) {
+Vector::Vector(double x, double y) {
     v_x = x;
     v_y = y;
 }
@@ -26,7 +28,5 @@ double Vector::getY() {
 }
 
 void Vector::show() {
-    std::cout << "Vector: " <<"["<<Vector::getX()<<", "<<Vector::getY()<<"]"<<std::endl;
+    cout << "Vector: [" << getX() << ", " << getY() << "]" << endl;
 }
-
-
