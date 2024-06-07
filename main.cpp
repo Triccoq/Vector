@@ -8,6 +8,8 @@ void menu(void) {
     cout<<"2 - Print vector"<<endl;
     cout<<"3 - X coordinate of the end of the vector"<<endl;
     cout<<"4 - Y coordinate of the end of the vector"<<endl;
+    cout<<"5 - Lenght of the vector"<<endl;
+    cout<<"6 - Angle the vector"<<endl;
     cout<<"Select an option:"<<endl;
 }
 
@@ -37,6 +39,12 @@ int main() {
                 break;
             case 4:
                 cout << "Y coordinate: " << Vector::getY() << endl;
+                break;
+            case 5:
+                cout << "Lenght of vector: " << Vector::lenght() << endl;
+                break;
+            case 6:
+                cout << "Angle: " << Vector::angle() <<" degrees."<< endl;
                 break;
         }
     } while (option != 0);

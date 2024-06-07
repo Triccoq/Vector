@@ -1,5 +1,6 @@
 #include <iostream>
 #include "vector.h"
+#include <cmath>
 using namespace std;
 double Vector::v_x;
 double Vector::v_y;
@@ -29,4 +30,14 @@ double Vector::getY() {
 
 void Vector::show() {
     cout << "Vector: [" << getX() << ", " << getY() << "]" << endl;
+}
+
+double Vector::lenght() {
+    return sqrt(v_x*v_x+v_y*v_y);
+}
+
+double Vector::angle() {
+    double angle_rad=atan2(v_y,v_x);
+    double angle_deg = (angle_rad*180) / M_PI;
+    return angle_deg;
 }

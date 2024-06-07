@@ -14,4 +14,6 @@ public:
     static double getX();
     static double getY();
     static void show();
+    static double lenght();
+    static double angle();
 };
