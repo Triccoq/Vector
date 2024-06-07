@@ -4,16 +4,18 @@ using namespace std;
 
 class Vector {
 private:
-    static double v_x;
-    static double v_y;
-
-public:
+    double v_x;
+    double v_y;
     Vector();
     Vector(double x = 0, double y = 0);
-    static void setXY(double x, double y);
-    static double getX();
-    static double getY();
-    static void show();
-    static double lenght();
-    static double angle();
+
+public:
+    void setXY(double x, double y);
+    double getX();
+    double getY();
+    void show();
+    double length();
+    double angle();
+    static Vector fromLengthAndAngle(double length, double angle);
+    static Vector fromXYCoordinates(double x, double y);
 };

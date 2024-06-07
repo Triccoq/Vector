@@ -2,8 +2,6 @@
 #include "vector.h"
 #include <cmath>
 using namespace std;
-double Vector::v_x;
-double Vector::v_y;
 
 Vector::Vector() {
     v_x = 0;
@@ -29,10 +27,10 @@ double Vector::getY() {
 }
 
 void Vector::show() {
-    cout << "Vector: [" << getX() << ", " << getY() << "]" << endl;
+    cout << "Vector: [" << v_x << ", " << v_y << "]" << endl;
 }
 
-double Vector::lenght() {
+double Vector::length() {
     return sqrt(v_x*v_x+v_y*v_y);
 }
 
@@ -40,4 +38,14 @@ double Vector::angle() {
     double angle_rad=atan2(v_y,v_x);
     double angle_deg = (angle_rad*180) / M_PI;
     return angle_deg;
+}
+
+Vector Vector::fromLengthAndAngle(double length, double angle){
+    double angleRAD = angle * M_PI / 180;
+    double v_laX= length * cos(angleRAD);
+    double v_laY= length * sin(angleRAD);
+    return Vector(v_laX, v_laY);
+}
+Vector Vector::fromXYCoordinates(double x, double y) {
+    return Vector(x, y);
 }
